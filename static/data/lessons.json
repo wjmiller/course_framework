@@ -1,0 +1,39 @@
+[
+
+	{
+		"_id": "od_js_01",
+		"title": "Unfilled Orders and Price Change",
+		"description": "Here is a description for this lesson. It briefly explains what is covered in the Unfilled Orders and Price Change lesson.",
+		"objectives": ["Lorem ipsum dolor sit amet consectetur.", "Ut enim ad minim veniam quis nostrud exercitation ullamco."],
+		"tags": [],
+		"estimatedTime": "30 min",
+		"activities": []
+	},
+	{
+		"_id": "od_js_02",
+		"title": "Basic Candlesticks: The Life Of A Candle",
+		"description": "Here is a description for this lesson. It briefly explains what is covered in the lesson.",
+		"objectives": ["Lorem ipsum dolor sit amet consectetur.", "Ut enim ad minim veniam quis nostrud exercitation ullamco."],
+		"tags": [],
+		"estimatedTime": "20 min",
+		"activities": []
+	},
+	{
+		"_id": "od_js_03",
+		"title": "Understanding Charts: Supply and Demand Zones",
+		"description": "Here is a description for this lesson. It briefly explains what is covered in this Supply and Demand Zone lesson.",
+		"objectives": ["Lorem ipsum dolor sit amet consectetur.", "Ut enim ad minim veniam quis nostrud exercitation ullamco."],
+		"tags": [],
+		"estimatedTime": "25 min",
+		"activities": []
+	},
+	{
+		"_id": "od_js_04",
+		"title": "Candlestick Formations: RBR. RBD, DBR, DBD",
+		"description": "Here is a description for this lesson. It briefly explains what is covered in the Candlestick Formations lesson.",
+		"objectives": ["Lorem ipsum dolor sit amet consectetur.", "Ut enim ad minim veniam quis nostrud exercitation ullamco."],
+		"tags": [],
+		"estimatedTime": "25 min",
+		"activities": []
+	}
+]

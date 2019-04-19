@@ -1,0 +1,14 @@
+[
+
+	{
+		"_id": "od_js",
+		"title": "Jumpstart",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+		"objectives": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.", "Duis aute irure dolor in reprehenderit in voluptate velit esse."],
+		"tags": [],
+		"estimatedTime": "1.5 hrs",
+		"lessons": ["od_js_01", "od_js_02", "od_js_03", "od_js_04"],
+		"created": "DateTime"
+	}
+
+]
