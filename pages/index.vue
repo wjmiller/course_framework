@@ -1,8 +1,8 @@
 <template>
 <div class="container">
-  <p>
-    This is the page that loads when you go to root directory.
-  </p>
+  <h1 class="mb-3">Navigate to course below</h1>
+  <nuxt-link class="btn"
+             to="/od_js">Go To Jumpstart Course</nuxt-link>
 </div>
 </template>
 

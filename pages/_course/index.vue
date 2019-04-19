@@ -2,7 +2,8 @@
 <b-container>
   <b-row>
     <b-col>
-      <b-button>Exit Course</b-button>
+      <nuxt-link class="btn"
+                 to="/">Exit Course</nuxt-link>
     </b-col>
   </b-row>
   <b-row>
@@ -59,7 +60,7 @@ export default {
   },
   data() {
     return {
-      progress: 30
+      progress: 40
     }
   },
   validate( {

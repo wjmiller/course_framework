@@ -45,7 +45,7 @@ export default {
   },
   data() {
     return {
-      progress: 30
+      progress: 0
     }
   },
   validate( {
