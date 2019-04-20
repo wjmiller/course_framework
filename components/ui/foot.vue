@@ -22,9 +22,9 @@ footer {
     align-items: center;
 
     .logo {
-        padding: 0 20px;
-        width: 160px;
-        height: 67px;
+        margin: 0 15px;
+        width: 180px;
+        height: 74px;
     }
 
     .copyright {
@@ -39,7 +39,7 @@ footer {
 
         .logo {
             background-image: url("~assets/images/ui/logos/ota_dark.png");
-            background-size: 160px 67px;
+            background-size: 180px 74px;
         }
     }
 }
@@ -50,7 +50,7 @@ footer {
 
         .logo {
             background-image: url("~assets/images/ui/logos/ota_light.png");
-            background-size: 160px 67px;
+            background-size: 180px 74px;
         }
     }
 }

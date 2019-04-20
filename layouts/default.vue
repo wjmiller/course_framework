@@ -1,7 +1,7 @@
 <template>
 <section>
   <navbar></navbar>
-  <nuxt />
+  <nuxt class="page-content" />
   <foot></foot>
 </section>
 </template>
@@ -30,5 +30,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.page-content {
+    min-height: calc(100vh - 315px);
+}
 </style>

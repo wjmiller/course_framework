@@ -28,9 +28,9 @@ export default {
     store,
     params
   } ) {
-    return axios.get( 'http://localhost:3000/data/courses.json' )
+    return axios.get( 'https://api.myjson.com/bins/17w5h0' )
       .then( ( cdata ) => {
-        axios.get( `http://localhost:3000/data/lessons.json` )
+        axios.get( 'https://api.myjson.com/bins/x6cl0' )
           .then( ( ldata ) => {
             store.commit( 'set_course', cdata.data.find( course => course[ '_id' ] === params.course ) )
             store.commit( 'set_lesson', ldata.data.find( lesson => lesson[ '_id' ] === params.lesson ) )

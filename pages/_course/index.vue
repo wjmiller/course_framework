@@ -38,15 +38,15 @@ export default {
     store,
     params
   } ) {
-    return axios.get( 'http://localhost:3000/data/courses.json' )
+    return axios.get( 'https://api.myjson.com/bins/17w5h0' )
       .then( ( cdata ) => {
-        const course = cdata.data.filter( course => course[ '_id' ] === params.course )
+        const course = cdata.data.find( course => course[ '_id' ] === params.course )
 
-        axios.get( `http://localhost:3000/data/lessons.json` )
+        axios.get( 'https://api.myjson.com/bins/x6cl0' )
           .then( ( ldata ) => {
 
-            store.commit( 'set_course', course[ 0 ] )
-            store.commit( 'set_lessons', ldata.data.filter( lesson => course[ 0 ].lessons.includes( lesson[ '_id' ] ) ) )
+            store.commit( 'set_course', course )
+            store.commit( 'set_lessons', ldata.data.filter( lesson => course.lessons.includes( lesson[ '_id' ] ) ) )
 
           } )
       } )
