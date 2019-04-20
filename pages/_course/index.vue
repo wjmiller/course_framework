@@ -7,7 +7,7 @@
     </b-col>
   </b-row>
   <b-row>
-    <b-col sm="8">
+    <b-col md="8">
       <courseInfo v-bind:course="course"
                   v-bind:progress="progress"></courseInfo>
     </b-col>
@@ -74,6 +74,19 @@ export default {
 
 <style lang="scss" scoped>
 .course-lessons {
-    margin: 50px 0 0 20px;
+    margin: 50px 0 0;
+
+    @media(min-width:768px) {
+        margin: 50px 0 0 20px;
+    }
+
+    h2 {
+        margin-bottom: 1.2rem;
+
+        @media(min-width: 768px) {
+            margin-bottom: 0.5rem;
+        }
+    }
+
 }
 </style>

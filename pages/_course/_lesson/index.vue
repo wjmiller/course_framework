@@ -7,7 +7,8 @@
     </b-col>
   </b-row>
   <b-rowl <b-col
-          sm="5">
+          md="6"
+          lg="5">
     <lessonInfo v-bind:course="course"
                 v-bind:lesson="lesson"
                 v-bind:progress="progress"></lessonInfo>

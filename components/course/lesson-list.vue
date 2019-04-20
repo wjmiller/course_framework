@@ -34,9 +34,14 @@ export default {
 .list-group-item {
 
     img {
+        display: none;
         width: 40px;
         height: 40px;
         margin-right: 12px;
+
+        @media(min-width: 768px) {
+            display: inline-block;
+        }
     }
 
     h5 {
