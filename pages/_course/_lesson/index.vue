@@ -3,7 +3,8 @@
   <b-row>
     <b-col>
       <nuxt-link v-bind:to="'/' + $route.params.course"
-                 class="btn">Exit Lesson</nuxt-link>
+                 class="btn exit-btn">
+        <fa :icon="['fas', 'chevron-left']" /> Exit Lesson</nuxt-link>
     </b-col>
   </b-row>
   <b-rowl <b-col

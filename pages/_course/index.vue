@@ -3,7 +3,8 @@
   <b-row>
     <b-col>
       <nuxt-link class="btn"
-                 to="/">Exit Course</nuxt-link>
+                 to="/">
+        <fa :icon="['fas', 'chevron-left']" /> Exit Course</nuxt-link>
     </b-col>
   </b-row>
   <b-row>

@@ -5,7 +5,8 @@
              v-bind:to="$route.params.course + '/' + lesson['_id']"
              class="list-group-item d-flex flex-row list-group-item-action">
     <div class="p-6">
-      <img src="~/assets/images/ui/play-circle.svg" />
+      <fa :icon="['far', 'play-circle']"
+          class="play-circle" />
     </div>
     <div class="p-6">
       <div>
@@ -33,15 +34,11 @@ export default {
 <style lang="scss" scoped>
 .list-group-item {
 
-    img {
+    .play-circle {
         display: none;
-        width: 40px;
-        height: 40px;
-        margin-right: 12px;
+        font-size: 2.6rem;
+        margin: 10px 16px 0 0;
 
-        @media(min-width: 768px) {
-            display: inline-block;
-        }
     }
 
     h5 {
@@ -60,6 +57,10 @@ export default {
     }
 
     @media(min-width: 768px) {
+
+        .play-circle {
+            display: block;
+        }
 
         h5 {
             margin: 0 15px 5px 0;
