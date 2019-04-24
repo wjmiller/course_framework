@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~assets/scss/variables/variables.scss";
+@import "~assets/scss/variables.scss";
 
 .course-info {
     .course-title {

@@ -1,4 +1,17 @@
-@import './variables/variables.scss';
+@import './variables.scss';
+
+
+//------------------------------------------------------
+// Page Transitions
+//------------------------------------------------------
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 
 
 //------------------------------------------------------

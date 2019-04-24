@@ -26,42 +26,28 @@
 <script>
 import courseInfo from '@/components/course/course-info';
 import lessonList from '@/components/course/lesson-list';
-
-import axios from 'axios';
-
 import {
   mapState
 } from 'vuex'
 
 
 export default {
-  fetch( {
-    store,
-    params
-  } ) {
-    return axios.get( 'https://api.myjson.com/bins/17w5h0' )
-      .then( ( cdata ) => {
-        const course = cdata.data.find( course => course[ '_id' ] === params.course )
-
-        axios.get( 'https://api.myjson.com/bins/x6cl0' )
-          .then( ( ldata ) => {
-
-            store.commit( 'set_course', course )
-            store.commit( 'set_lessons', ldata.data.filter( lesson => course.lessons.includes( lesson[ '_id' ] ) ) )
-
-          } )
-      } )
-  },
+  middleware: [ 'check_auth', 'auth' ],
   components: {
     courseInfo,
     lessonList
   },
   computed: {
-    ...mapState( [ 'course', 'lessons' ] )
-  },
-  data() {
-    return {
-      progress: 40
+    ...mapState( [ 'all_courses', 'all_lessons', 'progress' ] ),
+    course() {
+      const course = this.all_courses.find( course => course[ '_id' ] === this.$route.params.course )
+      this.$store.commit( 'set_course', course )
+      return course
+    },
+    lessons() {
+      const lessons = this.all_lessons.filter( lesson => this.course.lessons.includes( lesson[ '_id' ] ) )
+      this.$store.commit( 'set_lessons', lessons )
+      return lessons
     }
   },
   validate( {
