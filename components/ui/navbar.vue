@@ -6,24 +6,20 @@
       </b-nav-item>
       <b-nav-item-dropdown right>
         <template slot="button-content"><img class="user" src="~/assets/images/ui/user.png" /></template>
-        <toggle-button class="theme-btn"
+        <no-ssr><toggle-button class="theme-btn"
                        v-bind:value="true"
                        v-bind:labels="{checked: 'Dark ', unchecked: ' Light'}"
                        v-bind:width="70"
                        v-bind:height="30"
                        v-bind:color="{checked: '#676EC9', unchecked: '#8B8C96'}"
-                       v-on:change="toggleTheme" />
-        <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+                       v-on:change="toggleTheme" /></no-ssr>
+        <b-dropdown-item href="#" v-on:click="logout">Log Out</b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>
   </b-navbar>
 </template>
 
 <script>
-import {
-  ToggleButton
-} from 'vue-js-toggle-button'
-
 export default {
   name: "navbar",
   data() {
@@ -38,12 +34,13 @@ export default {
       }
     }
   },
-  components: {
-    ToggleButton
-  },
   methods: {
     toggleTheme( ev ) {
       ev.value ? this.theme = 'dark' : this.theme = 'light'
+    },
+    logout() {
+      this.$store.dispatch( 'logout' );
+      this.$router.push( '/auth' )
     }
   }
 }

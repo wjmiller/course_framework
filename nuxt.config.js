@@ -1,7 +1,8 @@
 import pkg from './package'
+const axios = require('axios')
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
    ** Headers of the page
@@ -50,7 +51,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{
+    src: '~plugins/vue-js-toggle-button',
+    ssr: false
+  }],
 
   /*
    ** Nuxt.js modules
@@ -59,6 +63,7 @@ export default {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
+    'cookie-universal-nuxt',
     [
       'nuxt-fontawesome', {
         component: 'fa',
@@ -75,8 +80,20 @@ export default {
     ]
   ],
 
+  loading: false,
+
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
+
   axios: {
-    // proxyHeaders: false
+    baseURL: process.env.BASE_URL || 'https://ota-course-framework.firebaseio.com'
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://ota-course-framework.firebaseio.com',
+    fbAPIKey: 'AIzaSyBirEEfUTCVTvOaYG7HHhol-YGSYzlm3sw'
   },
 
   /*
@@ -88,4 +105,45 @@ export default {
      */
     extend(config, ctx) {}
   }
+  /*
+  generate: {
+    routes: function() {
+      const routes = []
+
+      return axios.get('https://ota-course-framework.firebaseio.com/courses.json')
+        .then(cres => {
+          const courses = cres.data;
+
+          for (const p in courses) {
+
+            routes.push({
+              route: '/' + courses[p]['_id'],
+              payload: {
+                postData: courses[p]
+              }
+            })
+
+            return axios.get('https://ota-course-framework.firebaseio.com/lessons.json')
+              .then(lessons => {
+                for (const k in lessons.data) {
+
+                  if (courses[p].lessons.includes(lessons.data[k]['_id'])) {
+                    routes.push({
+                      route: '/' + courses[p]['_id'] + '/' + lessons.data[k]['_id'],
+                      payload: {
+                        postData: lessons.data[k]
+                      }
+                    })
+                  }
+                }
+
+                return routes
+              })
+          }
+
+        })
+    }
+
+}
+  */
 }

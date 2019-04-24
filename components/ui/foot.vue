@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/variables/variables.scss";
+@import "~assets/scss/variables.scss";
 
 footer {
     margin-top: 10rem;
